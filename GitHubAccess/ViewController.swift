@@ -11,6 +11,9 @@ import SwiftSpinner
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
+    
+    
     @IBOutlet weak var tableView: UITableView!
     var repositories = [RepositoryStructure]()
     
@@ -32,9 +35,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! RepositoryTableViewCell
-        cell.titleLabel?.text = repositories[indexPath.row].name.capitalized
-        cell.forksAndStarsLabel?.text = "Fork:" + String(repositories[indexPath.row].forks) + " Star:" + String(repositories[indexPath.row].watchers)
+        cell.titleLabel?.text = repositories[indexPath.row].name.capitalized +  "\n" +  "Fork:" + String(repositories[indexPath.row].forks) + " Star:" + String(repositories[indexPath.row].watchers)
+        cell.forksAndStarsLabel?.text = (repositories[indexPath.row].description ?? "")
         return cell
         
     }

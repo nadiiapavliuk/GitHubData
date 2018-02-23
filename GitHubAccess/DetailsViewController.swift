@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
- 
+    // MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
