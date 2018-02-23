@@ -15,12 +15,10 @@ struct RepositoryStructure: Decodable {
     let html_url: URL!
     let forks: Int
     let watchers: Int
-    let contributors_url: URL!
-    let tags_url: URL!
-    
-}
+    let language: String?
+    let created_at: String?
+    let updated_at: String?
+    let pushed_at: String?
 
-//struct RepositoryDetails: Decodable {
-//    let login: String
-//}
+}
 

@@ -15,9 +15,10 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var forksCountLabel: UILabel!
     @IBOutlet weak var starsCountLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var tagsLabel: UILabel!
-   
+    @IBOutlet weak var createdLabel: UILabel!
+    @IBOutlet weak var updatedLabel: UILabel!
+     @IBOutlet weak var pushedLabel: UILabel!
+     @IBOutlet weak var languageLabel: UILabel!
     var repository: RepositoryStructure?
 
     override func viewDidLoad() {
@@ -29,12 +30,13 @@ class DetailsViewController: UIViewController {
         
         nameLabel.text = repository?.name
         descriptionLabel.text = repository?.description
-        urlLabel.text = "\(repository!.html_url!)"
-       
+        urlLabel.text = String(describing: repository!.html_url!)
         forksCountLabel.text = String(describing: repository!.forks)
         starsCountLabel.text = String(describing: repository!.watchers)
-        authorLabel.text = "\(repository!.contributors_url!)"
-        tagsLabel.text = "\(repository!.tags_url!)"
+        languageLabel.text = "Language: " + (repository?.language ?? "Undefined")
+        createdLabel.text = "Created at " + (repository?.created_at)!
+        updatedLabel.text = "Updated at " + (repository?.updated_at)!
+        pushedLabel.text = "Pushed at " + (repository?.pushed_at)!
     }
     
     @objc func tapFunction(sender:UITapGestureRecognizer) {

@@ -9,7 +9,7 @@
 import UIKit
 
 class RepositoryTableViewCell: UITableViewCell {
-    @IBOutlet weak var forksAndStarsLabel: UILabel!
+    @IBOutlet weak var descrLabel: UILabel!
     
     @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
